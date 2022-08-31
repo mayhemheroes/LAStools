@@ -5,7 +5,7 @@ RUN apt install -y build-essential wget git clang cmake  automake autotools-dev 
     libjpeg-dev 
 RUN git clone https://github.com/LAStools/LAStools.git
 WORKDIR /LAStools	
-RUN cmake -DCMAKE_C_COMPILER=afl-gcc -DCMAKE_CXX_COMPILER=afl-gg++ .
+RUN cmake -DCMAKE_C_COMPILER=afl-gcc -DCMAKE_CXX_COMPILER=afl-g++ .
 RUN make
 RUN make install
 RUN mkdir /lazCorpus
