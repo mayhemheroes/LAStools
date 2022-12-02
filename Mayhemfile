@@ -2,5 +2,5 @@ project: las2txt
 target: las2txt
 
 cmds:
-  - cmd: /LAStools/bin64/las2txt64 -i @@
+  - cmd: /las2txt64 -i @@
     env: {}
