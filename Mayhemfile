@@ -1,17 +1,6 @@
-# Mayhem by https://forallsecure.com
-# Mayhemfile: configuration file for testing your target with Mayhem
-# Format: YAML 1.1
+project: las2txt
+target: las2txt
 
-project: las2txt-fuzz
-target: las2txt-fuzz
-
-# Base image to run the binary in.
-image: pedbap/las2txt-fuzz
-
-# Turns on extra test case processing (completing a run will take longer)
-advanced_triage: false
-
-# List of commands used to test the target
 cmds:
   - cmd: /LAStools/bin64/las2txt64 -i @@
     env: {}
