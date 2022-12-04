@@ -12,6 +12,8 @@ RUN make install
 FROM fuzzers/afl:2.52
 COPY --from=builder /LAStools/bin64/las2txt64 /
 COPY --from=builder /LAStools/data/*.laz /testsuite/
+# Copy LAStools shared objects
+COPY --from=builder /usr/local/lib/* /usr/local/lib/
 
-ENTRYPOINT ["afl-fuzz", "-i", "/testsuite/", "-o", "/las2txtOut"]
+ENTRYPOINT ["afl-fuzz", "-i", "/testsuite", "-o", "/las2txtOut"]
 CMD ["/las2txt64", "-i", "@@"]
